@@ -1,5 +1,6 @@
 from click.testing import CliRunner
 import pytest
+from pytest_mock import MockFixture
 import requests
 
 from hypermodern_python import console
@@ -11,7 +12,7 @@ def runner() -> CliRunner:
 
 
 @pytest.fixture
-def mock_wikipedia_random_page(mocker):
+def mock_wikipedia_random_page(mocker: MockFixture):
     return mocker.patch("hypermodern_python.wikipedia.random_page")
 
 
